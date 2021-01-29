@@ -12,29 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('register', [\App\Http\Controllers\AuthController::class,'showFormRegister'])->name('auth.showFormRegister');
 
-Route::get('/home', function () {
-    return view('welcome');
+Route::middleware('checkAge')->group(function (){
+    Route::post('register', [\App\Http\Controllers\AuthController::class,'register'])->name('auth.register');
 });
 
-Route::get('/birthday', function () {
-    return view('home');
-})->name('view-birthday');
-
-Route::post('/birthday', function (\Illuminate\Http\Request $request) {
-    $birthday = $request->birthday;
-    $current = new \Carbon\Carbon($birthday);
-    $age = $current->age;
-    dd($age);
-
-})->name('birthday');
-
-Route::get('location/{city?}', function (\Illuminate\Http\Request $request) {
-    if ($request->time_zone) {
-        $timeZone = $request->time_zone;
-        $carbon = \Carbon\Carbon::now($timeZone);
-        echo $carbon->hour;
-    }
-
-    return view('location');
-})->name('get-time-location');
+Route::prefix('users')->group(function (){
+    Route::get('/', [\App\Http\Controllers\UserController::class, 'index']);
+    Route::get('/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
+    Route::get('/create', [\App\Http\Controllers\UserController::class, 'showFormCreate'])->name('users.showFormCreate');
+});
