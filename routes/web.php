@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,14 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('register', [\App\Http\Controllers\AuthController::class,'showFormRegister'])->name('auth.showFormRegister');
 
-Route::middleware('checkAge')->group(function (){
-    Route::post('register', [\App\Http\Controllers\AuthController::class,'register'])->name('auth.register');
+Route::prefix('admin')->group(function (){
+    Route::get('', [HomeController::class, 'index'])->name('home.dashboard');
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class,'index'])->name('users.index');
+    });
 });
 
-Route::prefix('users')->group(function (){
-    Route::get('/', [\App\Http\Controllers\UserController::class, 'index']);
-    Route::get('/{id}', [\App\Http\Controllers\UserController::class, 'show'])->name('users.show');
-    Route::get('/create', [\App\Http\Controllers\UserController::class, 'showFormCreate'])->name('users.showFormCreate');
-});

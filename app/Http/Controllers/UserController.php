@@ -24,7 +24,7 @@ class UserController extends Controller
 
         ];
 
-        return view('users.list', compact('users'));
+        return view('back-end.users.list', compact('users'));
     }
 
     function show($id) {
