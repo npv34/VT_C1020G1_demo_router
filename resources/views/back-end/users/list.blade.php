@@ -23,28 +23,34 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    {{ $users->links() }}
+
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title"></h3>
                         </div>
-                        <!-- /.card-header -->
+
+                    <!-- /.card-header -->
                         <div class="card-body">
+
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>STT</th>
                                     <th>Họ tên</th>
                                     <th>Email(s)</th>
-                                    <th>Địa chỉ</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($users as $key => $user)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $user['name'] }}</td>
-                                    <td>{{ $user['email'] }}</td>
-                                    <td>{{ $user['address'] }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>
+                                        <a class="btn btn-danger" href="{{ route('users.delete', $user->id) }}" onclick="return confirm('Bạn chắc chắn muốn xoá')">Xoá</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -54,7 +60,7 @@
                                     <th>STT</th>
                                     <th>Họ tên</th>
                                     <th>Email(s)</th>
-                                    <th>Địa chỉ</th>
+                                    <th></th>
                                 </tr>
                                 </tfoot>
                             </table>
