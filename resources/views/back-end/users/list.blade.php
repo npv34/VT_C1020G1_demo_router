@@ -39,6 +39,7 @@
                                     <th>STT</th>
                                     <th>Họ tên</th>
                                     <th>Email(s)</th>
+                                    <th>Hình ảnh</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -48,8 +49,10 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td><img width="100" src="{{ asset('storage/' . $user->image) }}" alt=""></td>
                                     <td>
                                         <a class="btn btn-danger" href="{{ route('users.delete', $user->id) }}" onclick="return confirm('Bạn chắc chắn muốn xoá')">Xoá</a>
+                                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Chỉnh sửa</a>
                                     </td>
                                 </tr>
                                 @endforeach

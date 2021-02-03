@@ -26,12 +26,17 @@ class UserController extends Controller
     function store(Request $request): \Illuminate\Http\RedirectResponse
     {
         $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->address = $request->address;
+        $user->fill($request->all());
         $user->password = Hash::make($request->password);
-        $user->save();
 
+        //upload file
+        if ($request->hasFile('file')) {
+            $image = $request->file('file');
+            $path = $image->store('images', 'public');
+            $user->image = $path;
+        }
+
+        $user->save();
         return redirect()->route('users.index');
     }
 
@@ -39,6 +44,19 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
+        return redirect()->route('users.index');
+    }
+
+    function edit($id) {
+        $user = User::findOrFail($id);
+        return view('back-end.users.edit', compact('user'));
+    }
+
+    function update(Request $request, $id) {
+        $user = User::findOrFail($id);
+        $user->fill($request->all());
+        $user->save();
+
         return redirect()->route('users.index');
     }
 }
