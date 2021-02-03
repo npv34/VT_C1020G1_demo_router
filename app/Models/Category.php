@@ -10,4 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $table = 'categories';
 
+    function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Product::class, 'category_id');
+    }
 }
