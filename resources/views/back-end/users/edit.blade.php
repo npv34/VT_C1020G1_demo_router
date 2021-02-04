@@ -53,6 +53,17 @@
                                             <input type="text" value="{{ $user->address }}" name="address" class="form-control">
                                         </div>
                                         <div class="form-group">
+                                            <label>Quyền</label>
+                                            @foreach($roles as $role)
+                                                <div class="form-check">
+                                                    <input value="{{ $role->id }}" name="role_id[{{$role->id}}]"
+                                                            {{ ($user->checkRole($role->id) ? 'checked' : '') }}
+                                                           class="form-check-input" type="checkbox">
+                                                    <label class="form-check-label">{{ $role->name }}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <div class="form-group">
                                             <label for="exampleInputFile">File input</label>
                                             <div class="input-group">
                                                 <div class="custom-file">

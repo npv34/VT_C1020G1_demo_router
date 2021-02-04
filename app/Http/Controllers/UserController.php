@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserRequest;
+use App\Http\Services\UserService;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,9 +12,16 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    protected $userService;
+
+    public function __construct(UserService $userService)
+    {
+        $this->userService = $userService;
+    }
+
     function index()
     {
-       $users = User::orderBy('id', 'DESC')->paginate(20);
+       $users = $this->userService->getAll();
        return view('back-end.users.list', compact('users'));
     }
 
@@ -20,11 +30,15 @@ class UserController extends Controller
     }
 
     function create() {
-        return view('back-end.users.add');
+        // goi xuong model Role de lay data
+        $roles = Role::all();
+        //truyen du lieu xuong view
+        return view('back-end.users.add', compact('roles'));
     }
 
-    function store(Request $request): \Illuminate\Http\RedirectResponse
+    function store(CreateUserRequest $request): \Illuminate\Http\RedirectResponse
     {
+        //tao moi user
         $user = new User();
         $user->fill($request->all());
         $user->password = Hash::make($request->password);
@@ -37,26 +51,37 @@ class UserController extends Controller
         }
 
         $user->save();
+
+        // tao moi role_user
+        $user->roles()->sync($request->role_id);
+
         return redirect()->route('users.index');
     }
 
     function delete($id): \Illuminate\Http\RedirectResponse
     {
         $user = User::findOrFail($id);
+        //xoa anh nguoi dung
+
+        //go role nguoi dung
+        $user->roles()->detach();
+        //xoa nguoi dung
         $user->delete();
         return redirect()->route('users.index');
     }
 
     function edit($id) {
         $user = User::findOrFail($id);
-        return view('back-end.users.edit', compact('user'));
+        $roles = Role::all();
+        return view('back-end.users.edit', compact('user', 'roles'));
     }
 
     function update(Request $request, $id) {
         $user = User::findOrFail($id);
+        // update role
+        $user->roles()->sync($request->role_id);
         $user->fill($request->all());
         $user->save();
-
         return redirect()->route('users.index');
     }
 }

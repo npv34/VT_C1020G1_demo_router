@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ccfb646-2f55-4aac-af31-dfab4115562c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/back-end/products/add.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/back-end/products/list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Repositories/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Services/UserService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/core/main-sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/core/main-sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/list.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +186,8 @@
       <workItem from="1611887869638" duration="2892000" />
       <workItem from="1612143473348" duration="4132000" />
       <workItem from="1612230218321" duration="4251000" />
-      <workItem from="1612316434554" duration="4140000" />
+      <workItem from="1612316434554" duration="4308000" />
+      <workItem from="1612402416085" duration="4401000" />
     </task>
     <servers />
   </component>
