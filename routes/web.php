@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -43,3 +44,8 @@ Route::prefix('admin')->group(function (){
     });
 });
 
+Route::get('/', [HomeController::class,'showHomePage'])->name('showHomePage');
+Route::get('{id}/add-to-cart',[CartController::class,'addToCart'])->name('cart.addToCart');
+Route::prefix('cart')->group(function () {
+    Route::get('/',[CartController::class,'index'])->name('cart.index');
+});
