@@ -32,13 +32,13 @@
 
                         <!-- /.card-header -->
                         <div class="card-body">
-
+                            <button id="hide-image" class="btn btn-success">Hide image</button>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>STT</th>
                                     <th>Tên sản phẩm</th>
-                                    <th>Hình ảnh</th>
+                                    <th class="user-image">Hình ảnh</th>
                                     <th>Mô tả</th>
                                     <th>Giá</th>
                                     <th>Thể loại</th>
@@ -50,7 +50,7 @@
                                     <tr>
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $product->name }}</td>
-                                        <td><img width="100" src="{{ asset('storage/' . $product->img) }}" alt=""></td>
+                                        <td class="user-image"><img width="100" src="{{ asset('storage/' . $product->img) }}" alt=""></td>
 
                                         <td>{{ $product->desc }}</td>
                                         <td>{{ $product->price }}</td>
@@ -67,7 +67,7 @@
                                 <tr>
                                     <th>STT</th>
                                     <th>Tên sản phẩm</th>
-                                    <th>Hình ảnh</th>
+                                    <th class="user-image">Hình ảnh</th>
                                     <th>Mô tả</th>
                                     <th>Giá</th>
                                     <th>Thể loại</th>

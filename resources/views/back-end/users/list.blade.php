@@ -32,7 +32,13 @@
 
                     <!-- /.card-header -->
                         <div class="card-body">
-
+                            <div class="row">
+                                <div class="col-12 col-md-6"></div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <input type="text" id="search-user" class="form-control" placeholder="Search: name user">
+                                    <div class="col-12 list-group list-user-search" style="position: absolute"></div>
+                                </div>
+                            </div>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
@@ -47,7 +53,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($users as $key => $user)
-                                <tr>
+                                <tr class="user-item">
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>

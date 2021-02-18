@@ -84,4 +84,10 @@ class UserController extends Controller
         $user->save();
         return redirect()->route('users.index');
     }
+
+    function search(Request $request) {
+        $name = $request->name;
+        $users = User::where('name', 'LIKE', '%' . $name . '%')->paginate(5);
+        return response()->json($users);
+    }
 }

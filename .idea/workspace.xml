@@ -2,50 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ccfb646-2f55-4aac-af31-dfab4115562c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Models/Cart.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/flex-slider.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/jquery-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/jquery.fancybox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/magnific-popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/magnific-popup.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/nice-select.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/niceselect.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/owl-carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/slicknav.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/css/themify-icons.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/active.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/facnybox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/finalcountdown.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/flex-slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/gmap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/jquery-migrate-3.0.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/map-script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/nicesellect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/onepage-nav.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/owl-carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/scrollup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/slicknav.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/waypoints.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/front-end/js/ytplayer.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front-end/cart/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front-end/core/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front-end/core/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front-end/home.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/front-end/master.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/my.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/products/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/back-end/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/back-end/users/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +19,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -188,7 +158,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/front-end" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -226,7 +196,8 @@
       <workItem from="1612230218321" duration="4251000" />
       <workItem from="1612316434554" duration="4308000" />
       <workItem from="1612402416085" duration="4992000" />
-      <workItem from="1612492947283" duration="3899000" />
+      <workItem from="1612492947283" duration="4168000" />
+      <workItem from="1613611312398" duration="3627000" />
     </task>
     <servers />
   </component>

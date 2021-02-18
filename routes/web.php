@@ -27,7 +27,7 @@ Route::prefix('admin')->group(function (){
         Route::get('/{id}/delete', [UserController::class,'delete'])->name('users.delete');
         Route::get('/{id}/edit', [UserController::class,'edit'])->name('users.edit');
         Route::post('/{id}/edit', [UserController::class,'update'])->name('users.update');
-
+        Route::get('/search', [UserController::class,'search']);
     });
 
     Route::prefix('products')->group(function () {
