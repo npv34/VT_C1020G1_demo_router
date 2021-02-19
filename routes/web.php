@@ -32,10 +32,10 @@ Route::prefix('admin')->group(function (){
 
     Route::prefix('products')->group(function () {
         Route::get('/', [ProductController::class,'index'])->name('products.index');
-
+        Route::get('/getAll', [ProductController::class,'getAll']);
         Route::get('/create', [ProductController::class,'create'])->name('products.create');
         Route::post('/create', [ProductController::class,'store'])->name('products.store');
-
+        Route::get('{id}/delete',[ProductController::class,'destroy']);
     });
 
     Route::prefix('categories')->group(function () {

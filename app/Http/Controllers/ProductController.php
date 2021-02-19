@@ -29,7 +29,22 @@ class ProductController extends Controller
     }
 
     function index() {
-        $products = Product::all();
-        return view('back-end.products.list', compact('products'));
+//        $products = Product::all();
+        return view('back-end.products.list');
+    }
+
+    function getAll(): \Illuminate\Http\JsonResponse
+    {
+        $products = Product::with('category')->get();
+        return response()->json($products);
+    }
+
+    function destroy($id) {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return response()->json([
+            'message' => 'Delete success'
+        ]);
     }
 }

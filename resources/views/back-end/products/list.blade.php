@@ -45,22 +45,22 @@
                                     <th></th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                @foreach($products as $key => $product)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $product->name }}</td>
-                                        <td class="user-image"><img width="100" src="{{ asset('storage/' . $product->img) }}" alt=""></td>
+                                <tbody id="product-list">
+{{--                                @foreach($products as $key => $product)--}}
+{{--                                    <tr>--}}
+{{--                                        <td>{{ $key + 1 }}</td>--}}
+{{--                                        <td>{{ $product->name }}</td>--}}
+{{--                                        <td class="user-image"><img width="100" src="{{ asset('storage/' . $product->img) }}" alt=""></td>--}}
 
-                                        <td>{{ $product->desc }}</td>
-                                        <td>{{ $product->price }}</td>
-                                        <td><a href="{{ route('categories.getProductByCategoryId', $product->category->id) }}">{{ $product->category->name }}</a></td>
-                                        <td>
-                                            <a class="btn btn-danger" href="" onclick="return confirm('Bạn chắc chắn muốn xoá')">Xoá</a>
-                                            <a href="" class="btn btn-primary">Chỉnh sửa</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+{{--                                        <td>{{ $product->desc }}</td>--}}
+{{--                                        <td>{{ $product->price }}</td>--}}
+{{--                                        <td><a href="{{ route('categories.getProductByCategoryId', $product->category->id) }}">{{ $product->category->name }}</a></td>--}}
+{{--                                        <td>--}}
+{{--                                            <a class="btn btn-danger" href="" onclick="return confirm('Bạn chắc chắn muốn xoá')">Xoá</a>--}}
+{{--                                            <a href="" class="btn btn-primary">Chỉnh sửa</a>--}}
+{{--                                        </td>--}}
+{{--                                    </tr>--}}
+{{--                                @endforeach--}}
                                 </tbody>
 
                                 <tfoot>
