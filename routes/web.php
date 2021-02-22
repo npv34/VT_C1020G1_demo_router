@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('admin')->group(function (){
+Route::middleware('setLocale')->prefix('admin')->group(function (){
     Route::get('', [HomeController::class, 'index'])->name('home.dashboard');
     Route::prefix('users')->group(function () {
         Route::get('/', [UserController::class,'index'])->name('users.index');
@@ -42,6 +43,9 @@ Route::prefix('admin')->group(function (){
         Route::get('/{id}/products', [CategoryController::class,'getProductByCategoryId'])->name('categories.getProductByCategoryId');
 
     });
+
+    // set locale
+    Route::get('language', [LanguageController::class,'setLocale'])->name('Language.setLocale');
 });
 
 Route::get('/', [HomeController::class,'showHomePage'])->name('showHomePage');

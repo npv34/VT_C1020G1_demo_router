@@ -23,6 +23,14 @@
             </div>
         </div>
     </form>
+    <ul class="navbar-nav">
+        <form action="{{ route('Language.setLocale') }}" method="GET">
+            <select name="language" class="form-control" onchange="this.form.submit()">
+                <option {{ (session('locale') == 'vi') ? 'selected': ''  }} value="vi">VN</option>
+                <option {{ (session('locale') == 'en') ? 'selected': '' }} value="en">EN</option>
+            </select>
+        </form>
+    </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

@@ -48,7 +48,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Quản lý người dùng
+                            @lang('message.user_manager')
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
