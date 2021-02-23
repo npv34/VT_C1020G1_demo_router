@@ -7,7 +7,9 @@ use App\Http\Services\UserService;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -71,12 +73,18 @@ class UserController extends Controller
     }
 
     function edit($id) {
+        if (!$this->userCan('curd-user')){
+            abort(403);
+        }
         $user = User::findOrFail($id);
         $roles = Role::all();
         return view('back-end.users.edit', compact('user', 'roles'));
     }
 
     function update(Request $request, $id) {
+        if (!$this->userCan('curd-user')){
+            abort(403);
+        }
         $user = User::findOrFail($id);
         // update role
         $user->roles()->sync($request->role_id);

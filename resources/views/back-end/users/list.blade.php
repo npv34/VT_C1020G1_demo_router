@@ -48,7 +48,9 @@
                                     <th>Quyền</th>
 
                                     <th>Hình ảnh</th>
+                                    @can('curd-user')
                                     <th></th>
+                                    @endcan
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -63,10 +65,12 @@
                                         @endforeach
                                     </td>
                                     <td><img width="100" src="{{ asset('storage/' . $user->image) }}" alt=""></td>
+                                    @can('curd-user')
                                     <td>
                                         <a class="btn btn-danger" href="{{ route('users.delete', $user->id) }}" onclick="return confirm('Bạn chắc chắn muốn xoá')">Xoá</a>
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary">Chỉnh sửa</a>
                                     </td>
+                                    @endcan
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -78,7 +82,9 @@
                                     <th>Email(s)</th>
                                     <th>Quyền</th>
                                     <th>Hình ảnh</th>
+                                    @can('curd-user')
                                     <th></th>
+                                    @endcan
                                 </tr>
                                 </tfoot>
                             </table>
